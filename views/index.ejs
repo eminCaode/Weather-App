@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+        <div class="container row leftBody">
+            <div class="container main-card">
+                <div class="row inputsInCard ">
+                    <form action="/" method="Post">
+                    <input type="search" name="search" id="search" placeholder="Enter a city name" >
+                    <input type="submit" value="Search" id="searchButton">
+                    </form>
+                </div>
+                <div class="row theCity" >  
+                    <h1>  <% if (cityName) { %> <h1><%= cityName %></h1>
+                        <% } %></h1>
+                </div>
+                <div class="row icon ">
+                    <img src="<%=icon%>" %> alt="Scattered Clouds">
+                </div>
+                <div class="row degree">
+                    <span><%= celcius %>°C</span>    
+                </div>
+                <div class="row stateTheWeather">
+                    <span><%= howIsTheWeather %></span>
+                </div>
+                
+                <div class="row endOfCard">
+                    <div class="div last">
+                    <span><i class="fa-solid fa-wind" style="color: black;"></i> <%= humidity %>%</span>
+                    <span>Humidity</span>
+                    </div>
+                    <div class="div last">
+                    <span> <i class="fa-solid fa-temperature-high"style="color: black;"></i> <%= wind %>km/h</span>
+                    <span>Wind Speed</span>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <footer><p>Copyright © 2024</p></footer>
+
+
+</body>
+</html>
