@@ -104,4 +104,7 @@ body{
 
 footer{
     font-size: xx-large;
+    width: 100%;
+    text-align: end;
+    margin-right: 10%;
 }

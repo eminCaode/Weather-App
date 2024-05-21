@@ -23,7 +23,7 @@ app.use(express.json());
 
 
 let city; 
-
+let iconId;
 
 let cityArray = [
     "İstanbul", "New York", "Oslo", "Amsterdam", "Miami", "Washington", "Ankara", "Bursa", "Tokyo", "London",
@@ -51,6 +51,7 @@ app.get("/", async (req,res)=>{
         const humidity= result.data.main.humidity
         const wind= result.data.wind.speed
         const icon=result.data.weather[0].icon
+        iconId = icon;
         const iconUrl="http://openweathermap.org/img/wn/"+icon+".png"
 
         res.render("index", {
@@ -59,7 +60,8 @@ app.get("/", async (req,res)=>{
             howIsTheWeather:description,
             humidity:humidity,
             wind:wind,   
-            icon:iconUrl 
+            iconUrl:iconUrl,
+            iconId:iconId
         });
     } catch (error) {
         console.error(error); // Log the error for debugging
@@ -77,6 +79,7 @@ app.post("/", async (req,res)=>{
         const humidity= result.data.main.humidity
         const wind= result.data.wind.speed
         const icon=result.data.weather[0].icon
+        iconId = icon;
         const iconUrl="http://openweathermap.org/img/wn/"+icon+".png"
 
 
@@ -86,7 +89,8 @@ app.post("/", async (req,res)=>{
             howIsTheWeather:description,
             humidity:humidity,
             wind:wind,
-            icon:iconUrl
+            iconUrl:iconUrl,
+            iconId:iconId
         })
     } catch (error) {
         res.status(500).send("An error occurred while fetching weather data.");
