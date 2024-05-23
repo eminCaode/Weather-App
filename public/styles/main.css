@@ -5,32 +5,37 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: auto;
+    margin: 0;
+    padding: 0;
 }
 
-.leftBody{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 30%;
-}
+
 
 .main-card{
     
     display: flex;
-    
+    text-align: center;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    max-height: 360vh;
+    flex-grow: 1;
     letter-spacing: 0.2rem;
     background-color: rgba(255, 255, 255, 0.2); 
-    height: 85vh;
-    width: 100%;
     border-radius: 3%;
+    box-sizing: border-box;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    margin-top: 8vh;
+
 }
 
 #search{
+    
+    margin-top: 2vh;
+    margin-bottom: 1vh;
     border-style: none;
     background-color: none;
     border: none;
@@ -39,6 +44,7 @@ body{
     font-size: 2rem;
     padding: 10px;
     color: white;
+    width: 70%;
 }
 ::placeholder{
     color: white;
@@ -52,6 +58,7 @@ body{
     border-radius: 5px;
     border: none;
     font-size: 2rem;
+    
 }
 
 .inputsInCard{
@@ -63,7 +70,8 @@ body{
 
 .icon{
    height: 200px;
-   width: 200px;
+   width: 250px;
+   
 }
 .icon img{
     width: 100%;
@@ -71,13 +79,13 @@ body{
 
 .degree{
     font-size: 5rem;
-    margin-top: 40px;
-    margin-bottom: 15px;
     font-weight: 700;
-
+    margin-top: 2vh;
 }
-.theCity{
-    font-size: 2.2rem;
+.theCity h1{
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 2vh;
 }
 
 .stateTheWeather{
@@ -102,9 +110,77 @@ body{
     align-items: center;
 }
 
+.theCity>h1,
+.stateTheWeather,
+.endOfCard span {
+
+    word-break: break-word;  /* Uzun kelimeleri kır */
+    hyphens: auto;          /* Otomatik tire ekle */
+    overflow-wrap: break-word; /* Kelimeleri kelime sınırında kır */
+}
+
 footer{
     font-size: xx-large;
     width: 100%;
     text-align: end;
+    margin-top: 10vh;
     margin-right: 10%;
+}
+
+
+@media(max-width:600px){
+    #search{
+        width: 80%;
+        margin-bottom: 3vh;
+        font-size: 1.82rem;
+        padding: 0;
+    }
+    #searchButton{
+        font-size: 1.70rem;
+        width: 50%;
+        padding: 0;
+    }
+    .theCity>h1,.degree{
+        font-size: 3.4rem;
+    }
+    .theCity{
+        max-width: 100%;
+        overflow-wrap: break-word; /* Kelimeleri kelime sınırında kır */
+        word-break: break-all;  /* Uzun kelimeleri kır */
+        hyphens: auto;          /* Otomatik tire ekle */
+    }
+    .icon{
+        height: 150px;
+        width: 200px;
+    }
+    .degree{
+        margin-top: 3vh;
+        margin-bottom: 3vh;
+    }
+    .stateTheWeather{
+        font-size: 2.6rem;
+        width: 100%;
+        margin-bottom: 3vh;
+    }
+    .humidity{
+        margin-bottom:5vh;
+    }
+    
+}
+
+@media(max-width:375px){
+    #search{
+        font-size: 1.45rem;
+        width: 105%;
+
+    }
+    #searchButton{
+        font-size: 1.45rem;
+    }
+}
+
+@media( max-width:450px){
+    #search{
+        width: 100%;
+    }
 }

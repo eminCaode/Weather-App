@@ -4,23 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-        <div class="container row leftBody">
-            <div class="container main-card">
-                <div class="row inputsInCard ">
+       
+            <div class="container-fluid main-card   col-xxl-4 col-xl-6 col-lg-6 col-md-8  col-sm-11 ">
+                <div class="row inputsInCard col-lg-12 col-md-12">
                     <form action="/" method="Post">
                     <input type="search" name="search" id="search" placeholder="Enter a city name" >
                     <input type="submit" value="Search" id="searchButton">
                     </form>
                 </div>
-                <div class="row theCity" >  
-                    <h1>  <% if (cityName) { %> <h1><%= cityName %></h1>
-                        <% } %></h1>
+                <div class="row theCity mt-3 mb-2" >  
+                    <% if (cityName) { %>
+                        <h1><%= cityName %></h1>
+                    <% } %>
                 </div>
-                <div class="row icon ">
+                <div class="row icon mb-2 ">
                     
                    
                         <% if (iconId === "01d") { %>
@@ -41,26 +44,25 @@
                     
                     
                 </div>
-                <div class="row degree">
+                <div class="row degree col-lg-12 col-md-12">
                     <span><%= celcius %>°C</span>    
                 </div>
-                <div class="row stateTheWeather">
+                <div class="row stateTheWeather col-lg-12 col-md-12">
                     <span><%= howIsTheWeather %></span>
                 </div>
                 
-                <div class="row endOfCard">
-                    <div class="div last">
-                    <span><i class="fa-solid fa-wind" style="color: black;"></i> <%= humidity %>%</span>
+                <div class="row endOfCard col-lg-12 col-md-12">
+                    <div class="div last col-lg-6 humidity">
+                    <span><i class="fa-solid fa-temperature-high" style="color: black;"></i> <%= humidity %>%</span>
                     <span>Humidity</span>
                     </div>
-                    <div class="div last">
-                    <span> <i class="fa-solid fa-temperature-high"style="color: black;"></i> <%= wind %>km/h</span>
+                    <div class="div last col-lg-6 ">
+                    <span> <i class="fa-solid fa-wind"style="color: black;"></i> <%= wind %>km/h</span>
                     <span>Wind Speed</span>
-
+                    
                     </div>
 
                 </div>
-            </div>
 
         </div>
 
